@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cafe&wifi/london</title>
+
+    <!--Favicon Icon -->
+    <link rel="icon" href="/static/images/favicon-16x16.png">
+
+     <!-- Bootstrap Script  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!--CSS Stylesheet -->
+    <link rel="stylesheet" href="/static/styles.css">
+
+     <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+</head>
+<body>
+
+  <section id="title">
+   <div class="main">
+    <div class="container-fluid">
+      
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+          <img class="logo" src="/static/images/coffee-wifi.png" alt="coffee-wifi">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> 
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/add-cafe"><i class="fa-regular fa-square-plus"></i>Add Cafe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/delete-cafe"><i class="fa-regular fa-square-minus"></i>Delete Cafe</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    
+    <!-- Title -->
+    <div class="row intro">
+      <div class="col-lg-8 col-md-10">
+        <h1>CAFE & WIFI</h1>
+        <p class="cafe">The best work and study-friendly cafes in London.
+          Find venues with free and reliable Wi-Fi hotspots,
+          ample power sockets, and comfy seating areas.</p>
+      </div>   
+    </div>
+   </div>
+  </section>
+
+  <!-- Places List -->
+  <div class="all-cafes">
+    <div class="container-fluid">
+      <div class="row">
+        <h2 id="places-list" class="text-center">{{ cafes_count }} Work-Friendly Places</h2>
+        <div>
+           <!-- Display Flashed Messages -->
+          {% for message in get_flashed_messages() %}
+           <div class="alert alert-warning alert-dismissible fade show" role="alert">
+             {{ message }}
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>
+          {% endfor %}
+
+          <ul class="filter list-unstyled">
+            <li class="nav-item dropdown">
+              <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Filter
+              </button>
+              <ul class="dropdown-menu">
+                <form action="{{ url_for('home') }}" method="GET">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkWifi" name="has_wifi" value=True>
+                    <label class="form-check-label" for="checkWifi">Wifi</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkSeats" name="seats" value=True>
+                    <label class="form-check-label" for="checkSeats">Seats</label>
+
+                    {% if selected_filters['seats'] %}
+                      <label for="seatsDropdown">Number of Seats:</label>
+                      <select class="form-select" name="seats_dropdown" id="seatsDropdown">
+                        <option value="0-10" {% if selected_filters['seats_dropdown'] == '0-10' %}selected{% endif %}>0-10</option>
+                        <option value="10-20" {% if selected_filters['seats_dropdown'] == '10-20' %}selected{% endif %}>10-20</option>
+                        <option value="20-30" {% if selected_filters['seats_dropdown'] == '20-30' %}selected{% endif %}>20-30</option>
+                        <option value="30-40" {% if selected_filters['seats_dropdown'] == '30-40' %}selected{% endif %}>30-40</option>
+                        <option value="40-50" {% if selected_filters['seats_dropdown'] == '40-50' %}selected{% endif %}>40-50</option>
+                        <option value="50+" {% if selected_filters['seats_dropdown'] == '50+' %}selected{% endif %}>50+</option>
+                      </select>
+                    {% endif %}
+                    
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkSockets" name="has_sockets" value=True>
+                    <label class="form-check-label" for="checkSockets">Sockets</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkCalls" name="can_take_calls" value=True>
+                    <label class="form-check-label" for="checkCalls">Calls</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkWashroom" name="has_toilet" value=True>
+                    <label class="form-check-label" for="checkWashroom">Washroom</label>
+                  </div>
+                  <button type="submit" class="apply-filter btn btn-secondary">Apply Filter</button>
+                </form>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        {% for cafe in all_cafes %}
+        <div class="col-md-6">
+          <a class="place" href="{{ cafe.map_url}}" target="_blank" data-wifi="{{ cafe.has_wifi }}"
+            data-seats="{{ cafe.seats }}" data-sockets="{{ cafe.has_sockets }}" data-calls="{{ cafe.can_take_calls }} "data-washroom="{{ cafe.has_toilet }}">
+            <div class="card-img-top">
+              <img alt="{{ cafe.name }}" src="{{ cafe.img_url }}">
+            </div>
+            <div class="card-body">
+              <h5>{{ cafe.name }}</h5>
+              <p><i class="fa-solid fa-location-arrow"></i> {{ cafe.location }}</p>
+              <p>PRICE {{ cafe.coffee_price }}</p>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+     
+</body>
+</html>

@@ -1,0 +1,94 @@
+{% extends 'bootstrap/base.html' %} 
+{% import "bootstrap/wtf.html" as wtf %}
+{%block title %}cafe&wifi/london{% endblock %} 
+{% block styles %} 
+{{ super()}}
+
+<!--Favicon Icon -->
+<link rel="icon" href="/static/images/favicon-16x16.png" />
+
+<!-- Bootstrap Script -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+  crossorigin="anonymous"
+></script>
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+  crossorigin="anonymous"
+/>
+
+<!--CSS Stylesheet -->
+<link rel="stylesheet" href="/static/styles.css" />
+
+<!--Font Awesome-->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+{% endblock %} 
+
+{% block content %}
+<section id="title">
+  <div class="add-cafe-img">
+    <div class="container-fluid">
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+          <img
+            class="logo"
+            src="/static/images/coffee-wifi.png"
+            alt="coffee-wifi"
+          />
+          CAFE & WIFI
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/delete-cafe"
+                ><i class="fa-regular fa-square-minus"></i>Delete Cafe</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- Add Cafe -->
+<div id="add-cafe">
+  <div class="container">
+    <div class="col-md-7 col-sm-10">
+      <h1>ADD NEW CAFE</h1>
+      <p class="new-cafe">
+        Let freelancers, digital nomads, and other remote workers know about a
+        new work-friendly venue!
+      </p>
+      {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "success"})
+      }}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,140 @@
+.main{
+    background-image: url("images/coffee-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+.logo{
+    height: 50px;
+}
+
+.nav-item{
+    padding: 0 18px;
+}
+
+.nav-link{
+    font-size: 18px;
+    color: rgb(40, 17, 17);
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.container-fluid{
+    padding: 0%;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.intro{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.intro h1{
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 6rem;
+    color: rgb(248, 241, 241);
+    padding: 67px;
+}
+
+p{
+    font-family: PT Serif, Georgia, Times New Roman, Times, serif;
+    margin: 0;
+}
+
+.intro p{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    padding: 20px;
+}
+
+.filter{
+    float: right;
+}
+
+.all-cafes{
+    margin: .5em;
+}
+
+h5{
+    margin: 0;
+}
+
+.card-img-top{
+    width: 200px;
+}
+
+.card-img-top img{
+    height: 130px;
+    width: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card-body{
+    margin: 1.2rem;
+}
+
+.place{
+    text-decoration: none;
+    display: flex;
+    cursor: pointer;
+    color: black;
+}
+
+.place :hover{
+    color: rgb(36, 93, 193);
+}
+
+.add-cafe-img{
+    background-image: url("/static/images/add-cafe.jpg");
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    height: 500px;
+}
+
+.form-check{
+    float: left;
+    margin-left: 1.5rem;
+}
+
+.form-check-label{
+    margin-right: 1rem;
+    font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.btn{
+    font-family: "Noto Sans", "Helvetica Neue";
+}
+
+.apply-filter{
+    margin-left: 1.5rem;
+}
+
+.new-cafe{
+    font-size: 1.8rem;
+}
+
+label {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.remove-cafe{
+    margin-top: .5rem;
+    margin-left: 1rem;
+}
+
+.no-results{
+    margin: 10%;
+}
