@@ -61,8 +61,10 @@ This app supports flexible local and cloud deployment:
 - ✅ **PostgreSQL via [Neon](https://neon.tech)** for scalable, production-ready environments
 
 You can configure the database using a `.env` file:
+
 # .env
 SECRET_KEY=your-secret-key
+
 DATABASE_URL=postgresql://<username>:<password>@<your-neon-host>.neon.tech/<database>?sslmode=require
 
 ---
