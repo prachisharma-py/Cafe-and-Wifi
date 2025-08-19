@@ -15,9 +15,9 @@ Easily browse, filter, and manage cafes based on Wi-Fi availability, socket acce
 
 | Home Page                           | Filter Panel                         | Add Cafe Form                       |
 |------------------------------------|--------------------------------------|-------------------------------------|
-| ![Home](screenshots/home.png)      | ![Filters](screenshots/filters.png)  | ![Add Cafe](screenshots/add.png)    |
+| ![Home](assets/home.png)      | ![Filters](assets/filters.png)  | ![Add Cafe](assets/add.png)    |
 
-> Screenshots located in the `/screenshots` folder.
+> Screenshots located in the `/assets` folder.
 
 ---
 
