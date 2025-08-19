@@ -5,9 +5,12 @@ Easily browse, filter, and manage cafes based on Wi-Fi availability, socket acce
 
 ---
 
-## 🚀 Live Demo
+## 🌐 Live Demo
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge)](https://your-demo-url.com)
+🚀 Try the app here: [https://cafe-and-wifi-is7h.onrender.com](https://cafe-and-wifi-is7h.onrender.com)
+
+[![Live on Render](https://img.shields.io/badge/Live-Demo-green?style=flat&logo=render)](https://cafe-and-wifi-is7h.onrender.com)
+
 
 ---
 
