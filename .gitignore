@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables
+.env
+
+# VSCode config
+.vscode/
+
+# SQLite database
+*.db
+instance/
+
+# Alembic caches
+migrations/__pycache__/
+migrations/versions/__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db
