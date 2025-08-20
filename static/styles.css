@@ -178,12 +178,12 @@ label {
   box-sizing: border-box;
 }
 
-/* For checkboxes: better spacing between checkbox and label */
 #add-cafe .form-check {
-  float: none !important;  /* cancel any float */
+  float: none !important;
   margin-left: 1.5rem;
   margin-bottom: 0.8rem;
-  display: block; /* ensures checkbox group stacks vertically */
+  display: flex;
+  align-items: center;
 }
 
 #add-cafe .btn-success {
