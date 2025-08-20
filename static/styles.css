@@ -179,9 +179,11 @@ label {
 }
 
 /* For checkboxes: better spacing between checkbox and label */
-#add-cafe .form-check input[type="checkbox"] {
-  margin-right: 0.5rem;
-  vertical-align: middle;
+#add-cafe .form-check {
+  float: none !important;  /* cancel any float */
+  margin-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  display: block; /* ensures checkbox group stacks vertically */
 }
 
 #add-cafe .btn-success {
