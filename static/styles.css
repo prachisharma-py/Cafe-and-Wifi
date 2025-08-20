@@ -158,10 +158,9 @@ label {
 #add-cafe .form-group,
 #add-cafe .form-check {
   margin-bottom: 1rem;
-  display: block; /* forces each form group to occupy full width */
+  display: block; 
 }
 
-/* Optional: style labels and inputs for clarity */
 #add-cafe label {
   font-weight: 600;
   display: block;
