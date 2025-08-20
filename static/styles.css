@@ -179,11 +179,12 @@ label {
 }
 
 #add-cafe .form-check {
-  float: none !important;
-  margin-left: 1.5rem;
-  margin-bottom: 0.8rem;
-  display: flex;
-  align-items: center;
+  float: none !important;    
+  margin-left: 0;           
+  margin-bottom: 0.8rem;    
+  display: flex;             
+  align-items: center;       
+  gap: 0.4rem;              
 }
 
 #add-cafe .btn-success {
