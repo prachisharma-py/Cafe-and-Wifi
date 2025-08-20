@@ -146,13 +146,13 @@ label {
 #add-cafe h1 {
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #2c3e50;
+  color: #000000;
 }
 
 #add-cafe .new-cafe {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  color: #555;
+  color: #414040;
 }
 
 #add-cafe .form-group,
@@ -166,7 +166,7 @@ label {
   font-weight: 600;
   display: block;
   margin-bottom: 0.3rem;
-  color: #34495e;
+  color: #000000;
 }
 
 #add-cafe input.form-control,
