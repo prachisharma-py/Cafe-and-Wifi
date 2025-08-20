@@ -138,3 +138,55 @@ label {
 .no-results{
     margin: 10%;
 }
+
+#add-cafe {
+  padding: 2rem 0;
+}
+
+#add-cafe h1 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+#add-cafe .new-cafe {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+#add-cafe .form-group,
+#add-cafe .form-check {
+  margin-bottom: 1rem;
+  display: block; /* forces each form group to occupy full width */
+}
+
+/* Optional: style labels and inputs for clarity */
+#add-cafe label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #34495e;
+}
+
+#add-cafe input.form-control,
+#add-cafe select.form-control {
+  width: 100%;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+}
+
+/* For checkboxes: better spacing between checkbox and label */
+#add-cafe .form-check input[type="checkbox"] {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+#add-cafe .btn-success {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
